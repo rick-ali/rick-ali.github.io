@@ -1,0 +1,52 @@
+@incollection{example_invited_talk,
+  author = {J. Doe},
+  note = {Example Location},
+  publisher = {Example Talk Name},
+  year = {2040},
+  keywords = "invited",
+}
+
+@software{example_software,
+  author = {J. Doe},
+  title = {Example software},
+  url = {https://example.com},
+  date = {2040},
+}
+
+@incollection{example_conference,
+    author = {J. Doe},
+    title = {Example talk},
+    note = {Example Conference},
+    year = {2040},
+}
+
+@unpublished{feynman06,
+    Author = {R. P. Feynman and J. M. Cline},
+    Title = {Feynman lectures on the strong interations},
+    Note = {arXiv:2006.08594},
+    doi = {2006.08594},
+    file = {feynman06.pdf},
+    abstract = {These twenty-two lectures, with exercises, comprise the extent of what was meant to be a full-year graduate-level course on the strong interactions and QCD, given at Caltech in 1987-88. The course was cut short by the illness that led to Feynman's death. Several of the lectures were finalized in collaboration with Feynman for an anticipated monograph based on the course. The others, while retaining Feynman's idiosyncrasies, are revised similarly to those he was able to check. His distinctive approach and manner of presentation are manifest throughout. Near the end he suggests a novel, nonperturbative formulation of quantum field theory in D dimensions. Supplementary material is provided in appendices and ancillary files, including verbatim transcriptions of three lectures and the corresponding audiotaped recordings.},
+}
+
+
+@article{brown2024biasvariance,
+  title={Bias/Variance is not the same as Approximation/Estimation},
+  author={Gavin Brown and Riccardo Ali},
+  journal={Transactions on Machine Learning Research},
+  issn={2835-8856},
+  year={2024},
+  url={https://openreview.net/forum?id=4TnFbv16hK},
+  file={bias_variance.pdf},
+  abstract={We study the relation between two classical results: the bias-variance decomposition, and the approximation-estimation decomposition. Both are important conceptual tools in Machine Learning, helping us describe the nature of model fitting. It is commonly stated that they are “closely related”, or “similar in spirit”. However, sometimes it is said they are equivalent. In fact they are different, but have subtle connections cutting across learning theory, classical statistics, and information geometry, that (very surprisingly) have not been previously observed. We present several results for losses expressible as Bregman divergences: a broad family with a known bias-variance decomposition. Discussion and future directions are presented for more general losses, including the 0/1 classification loss.}
+}
+
+@inproceedings{ali2024metric,
+    title={Metric Learning for Clifford Group Equivariant Neural Networks},
+    author={Riccardo Ali and Paulina Kulyt{\.{e}} and Haitz S{\'a}ez de Oc{\'a}riz Borde and Pietro Lio},
+    booktitle={ICML 2024 Workshop on Geometry-grounded Representation Learning and Generative Modeling},
+    year={2024},
+    url={https://openreview.net/forum?id=4tw1U41t6Q},
+    file={Metric_Learning_for_Clifford_Group_Equivariant_Neural_Networks.pdf},
+    abstract={Clifford Group Equivariant Neural Networks~(CGENNs) leverage Clifford algebras and multivectors as an alternative approach to incorporating group equivariance to ensure symmetry constraints in neural representations. In principle, this formulation generalizes to orthogonal groups and preserves equivariance regardless of the metric signature. However, previous works have restricted internal network representations to Euclidean or Minkowski (pseudo-)metrics, handpicked depending on the problem at hand. In this work, we propose an alternative method that enables the metric to be learned in a data-driven fashion, allowing the CGENN network to learn more flexible representations. Specifically, we populate metric matrices fully, ensuring they are symmetric by construction, and leverage eigenvalue decomposition to integrate this additional learnable component into the original CGENN formulation in a principled manner. Additionally, we motivate our method using insights from category theory, which enables us to explain Clifford algebras as a categorical construction and guarantee the mathematical soundness of our approach. We validate our method in various tasks and showcase the advantages of learning more flexible latent metric representations. The code and data are available at https://github.com/rick-ali/Metric-Learning-for-CGENNs}
+}

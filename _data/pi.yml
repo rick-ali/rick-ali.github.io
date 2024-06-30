@@ -1,0 +1,22 @@
+- name: Riccardo Ali
+  photo: me.jpeg
+  info: University of Cambridge
+  email: rma55@cam.ac.uk
+  github: https://github.com/rick-ali
+  # researchgate: https://www.researchgate.net/
+  scholar: https://scholar.google.com/citations?user=WlS8pBQAAAAJ&hl=it
+  cv: cv/CV_Riccardo_Ali.pdf
+  # Change the number below to the number of "educations" you have (up to 6)
+  number_educ: 2
+  education1: "(2024) MPhil in Advanced Computer Science, University of Cambridge"
+  education2: "(2023) BSc Mathematics and Computer Science, University of Manchester"
+  # education3: 
+  # education4: 
+  # education5: 
+  # education6: 
+  education1short: MPhil CS, Cambridge
+  education2short: BSc Maths & CS, Manchester
+  # education3short: 
+  # education4short: 
+  # education5short: 
+  # education6short: 
