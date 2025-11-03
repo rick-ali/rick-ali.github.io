@@ -23,7 +23,7 @@ repository               : "academicpages/academicpages.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "me-zoomed.jpg"
   name             : "Riccardo Ali"
   pronouns         : # example: "she/her"  
   bio              : "Hi there! I am a PhD candidate in Computer Science at the University of Cambridge under the supervision of Prof. Jamie Vicary and Prof. Pietro Liò. My research focuses on understanding (and using) the structure in data and their representation in deep learning."
