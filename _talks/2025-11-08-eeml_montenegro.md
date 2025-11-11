@@ -3,9 +3,9 @@ title: "Introduction to Mechanistic Interpretability"
 collection: talks
 type: "EEML Machine Learning Workshop"
 permalink: /talks/workshop-eeml
-venue: "Podgorica"
+venue: 
 date: 2025-11-08
-location: "Montenegro"
+location: "Podgorica, Montenegro"
 link: "https://workshops.eeml.eu/"
 ---
 
