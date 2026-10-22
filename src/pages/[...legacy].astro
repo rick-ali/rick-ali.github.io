@@ -1,0 +1,24 @@
+---
+import redirects from '../data/legacy-redirects.json';
+import { href } from '../lib/content';
+
+export function getStaticPaths() {
+  return Object.entries(redirects).map(([legacy, destination]) => ({
+    params: { legacy }, props: { destination },
+  }));
+}
+const destination = href(Astro.props.destination);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page moved · Riccardo Ali</title>
+    <meta name="description" content="This page has moved to Riccardo Ali's updated website." />
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="refresh" content={'0;url=' + destination} />
+    <link rel="canonical" href={new URL(destination, Astro.site)} />
+  </head>
+  <body><h1>This page has moved.</h1><p><a href={destination}>Continue to the updated page</a>.</p></body>
+</html>

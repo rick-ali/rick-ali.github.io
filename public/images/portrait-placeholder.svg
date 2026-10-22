@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280">
+ <defs>
+  <linearGradient id="backdrop" x2="1" y2="1"><stop stop-color="#dec5a8"/><stop offset="1" stop-color="#ad7970"/></linearGradient>
+  <linearGradient id="figure" x2="0" y2="1"><stop stop-color="#314550"/><stop offset="1" stop-color="#1a2b36"/></linearGradient>
+ </defs>
+ <rect width="280" height="280" fill="url(#backdrop)"/>
+ <circle cx="217" cy="57" r="91" fill="#f6dfbf" opacity=".25"/>
+ <path d="M-25 216Q98 113 295 176v104H-25Z" fill="#916b67" opacity=".2"/>
+ <ellipse cx="140" cy="285" rx="103" ry="108" fill="url(#figure)"/>
+ <path d="M119 155h42v38c-11 13-30 13-42 0Z" fill="#c49278"/>
+ <ellipse cx="140" cy="116" rx="45" ry="57" fill="#ebbc96"/>
+ <path d="M95 114c-8-39 5-65 43-65 35 0 53 23 47 60-13-4-24-18-27-29-12 17-34 26-63 24Z" fill="#314550"/>
+ <text x="140" y="256" text-anchor="middle" fill="#ead8c6" font-family="sans-serif" font-size="10" letter-spacing="2">PORTRAIT PLACEHOLDER</text>
+</svg>

@@ -1,0 +1,13 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import ResearchCard from './ResearchCard.astro';
+import { loadContent, href } from '../lib/content';
+import site from '../data/site.json';
+const { research } = await loadContent();
+const years = [...new Set(research.map(entry => entry.data.year))];
+---
+<SiteLayout title="Publications" section="research" canonicalPath={href('research/')}>
+ <header class="page-heading"><h1>{site.researchHeading}</h1><p>{site.researchIntro}</p><a class="text-link" href={site.socials.find(link => link.icon === 'scholar')?.url}>Google Scholar ↗</a></header>
+ {years.map(year => <section class="year-group" aria-label={`Publications from ${year}`}><h2 class="year-heading">{year}</h2><div class="publication-list">{research.filter(entry => entry.data.year === year).map(entry => <ResearchCard entry={entry} />)}</div></section>)}
+ {!research.length && <p class="empty-state">Research updates will appear here.</p>}
+</SiteLayout>

@@ -1,0 +1,55 @@
+---
+import '@fontsource/dm-sans/latin-400.css';
+import '@fontsource/dm-sans/latin-500.css';
+import '@fontsource/dm-sans/latin-600.css';
+import '@fontsource/ibm-plex-mono/latin-400.css';
+import '@fontsource/instrument-serif/latin-400.css';
+import '@fontsource/instrument-serif/latin-400-italic.css';
+import '../styles/site.css';
+import SocialLinks from '../components/SocialLinks.astro';
+import site from '../data/site.json';
+import { href, resourceHref } from '../lib/content';
+
+interface Props { title?: string; description?: string; section?: string; canonicalPath?: string; noindex?: boolean; }
+const { title, description = site.description, section = '', canonicalPath = Astro.url.pathname, noindex = false } = Astro.props;
+const pageTitle = title ? `${title} · ${site.name}` : `${site.name} · ${site.profile.role}`;
+const canonical = new URL(canonicalPath, Astro.site);
+const image = new URL(href('social-card.png'), Astro.site);
+const theme = `--site-bg:${site.theme.background};--site-panel:${site.theme.panel};--site-accent:${site.theme.accent}`;
+---
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{pageTitle}</title>
+  <meta name="description" content={description} />
+  <meta name="theme-color" content={site.theme.background} />
+  {noindex && <meta name="robots" content="noindex" />}
+  <link rel="canonical" href={canonical} />
+  <link rel="icon" type="image/svg+xml" href={href('favicon.svg')} />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={pageTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={image} />
+  <meta property="og:image:alt" content={`${site.name} — Research, teaching, and talks.`} />
+  <meta name="twitter:card" content="summary_large_image" />
+ </head>
+ <body class="site" style={theme}>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-wrap">
+   <header class="site-nav">
+    <a class="identity" href={href()} aria-label="Home"><svg class="home-icon" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v11h5v-6h4v6h5V9" /></svg></a>
+    <nav aria-label="Main navigation">
+     <a href={href('research/')} aria-current={section === 'research' ? 'page' : undefined}>Research</a>
+     <a href={href('teaching/')} aria-current={section === 'teaching' ? 'page' : undefined}>Teaching</a>
+     <a href={href('talks/')} aria-current={section === 'talks' ? 'page' : undefined}>Talks</a>
+     {site.cvUrl && <a href={resourceHref(site.cvUrl)}>CV</a>}
+    </nav>
+   </header>
+   <main id="main"><slot /></main>
+   <footer><span>© {new Date().getUTCFullYear()} {site.name}</span><SocialLinks compact /></footer>
+  </div>
+ </body>
+</html>

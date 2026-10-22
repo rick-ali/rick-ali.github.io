@@ -1,0 +1,9 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { entryHref } from '../lib/content';
+interface Props { entries: CollectionEntry<'teaching'>[]; }
+const { entries } = Astro.props;
+---
+<div class="course-list">
+ {entries.map(entry => <a class="course" href={entryHref(entry)}><div><h3>{entry.data.title}</h3><p>{entry.data.role} · {entry.data.period}</p></div><span class="row-arrow" aria-hidden="true">↗</span></a>)}
+</div>
