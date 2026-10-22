@@ -1,0 +1,35 @@
+{
+  "name": "Riccardo Ali",
+  "url": "https://rick-ali.github.io",
+  "email": "rma55@cam.ac.uk",
+  "description": "Riccardo Ali's research, teaching, and talks on structure in machine learning.",
+  "profile": {
+    "role": "PhD Student @ University of Cambridge",
+    "portrait": "/images/portrait.jpg",
+    "portraitAlt": "Riccardo Ali smiling outdoors, wearing glasses and a blue shirt",
+    "greeting": "Hi! I'm",
+    "firstName": "Riccardo",
+    "biography": [
+      "I study the geometric, algebraic, and information-theoretic structure of neural networks. I'm interested in how mathematical ideas can help us understand what models learn and how they make decisions.",
+      "My research spans symmetry and equivariance, representation learning, and interpretability in language models."
+    ]
+  },
+  "education": [
+    { "degree": "PhD in Computer Science", "institution": "University of Cambridge", "period": "Ongoing" },
+    { "degree": "MPhil in Advanced Computer Science", "institution": "University of Cambridge", "period": "" },
+    { "degree": "BSc in Mathematics and Computer Science", "institution": "University of Manchester", "period": "" }
+  ],
+  "researchHeading": "Publications",
+  "homepagePublicationCount": 10,
+  "researchIntro": "My research explores how mathematical structure shapes what neural networks learn, from symmetry and geometry to information processing in language models.",
+  "teachingHeading": "Teaching",
+  "talksHeading": "Talks",
+  "socials": [
+    { "label": "Google Scholar", "icon": "scholar", "url": "https://scholar.google.com/citations?user=WlS8pBQAAAAJ&hl=en" },
+    { "label": "GitHub", "icon": "github", "url": "https://github.com/rick-ali" },
+    { "label": "LinkedIn", "icon": "linkedin", "url": "https://www.linkedin.com/in/riccardo-ali" },
+    { "label": "Twitter", "icon": "twitter", "url": "https://twitter.com/Riccardo_Ali_" }
+  ],
+  "cvUrl": "",
+  "theme": { "background": "#111b26", "panel": "#172330", "accent": "#e9b58c" }
+}

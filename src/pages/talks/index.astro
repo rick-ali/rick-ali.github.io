@@ -1,0 +1,9 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import TalkList from '../../components/TalkList.astro';
+import site from '../../data/site.json';
+import { loadContent } from '../../lib/content';
+const { talks } = await loadContent();
+const years = [...new Set(talks.map(entry => entry.data.date.slice(0, 4)))];
+---
+<SiteLayout title="Talks" section="talks"><header class="page-heading"><h1>{site.talksHeading}</h1></header><div class="reading-width">{years.map(year => <section class="year-group" aria-label={`Talks in ${year}`}><h2 class="year-heading">{year}</h2><TalkList entries={talks.filter(entry => entry.data.date.startsWith(year))} /></section>)}{!talks.length && <p class="empty-state">Talks will appear here.</p>}</div></SiteLayout>

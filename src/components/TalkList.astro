@@ -1,0 +1,19 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { entryHref, dateParts, resourceHref } from '../lib/content';
+interface Props { entries: CollectionEntry<'talks'>[]; showImages?: boolean; }
+const { entries, showImages = false } = Astro.props;
+---
+<div class="talk-list">
+ {entries.map(entry => {
+  const date = dateParts(entry.data.date);
+  const illustrated = showImages && Boolean(entry.data.thumbnail);
+  return <a class:list={['talk', { 'talk-illustrated': illustrated }]} href={entryHref(entry)}>
+   {illustrated ? <img class="talk-thumbnail" src={resourceHref(entry.data.thumbnail!)} alt="" width="128" height="96" loading="lazy" /> : <time class="date" datetime={entry.data.date}>{date.month}<strong>{date.day}</strong>{date.year}</time>}
+   <div>
+    {illustrated && <time class="talk-inline-date" datetime={entry.data.date}>{Number(date.day)} {date.month} {date.year}</time>}
+    <span class="talk-tag">{entry.data.kind}</span><h3>{entry.data.title}</h3><p>{entry.data.event}<br />{entry.data.location}</p>
+   </div>
+  </a>;
+ })}
+</div>

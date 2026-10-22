@@ -1,0 +1,9 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import TeachingList from '../../components/TeachingList.astro';
+import site from '../../data/site.json';
+import { loadContent } from '../../lib/content';
+const { teaching } = await loadContent();
+const years = [...new Set(teaching.map(entry => entry.data.year))];
+---
+<SiteLayout title="Teaching" section="teaching"><header class="page-heading"><h1>{site.teachingHeading}</h1></header><div class="reading-width">{years.map(year => <section class="year-group" aria-label={`Teaching in ${year}`}><h2 class="year-heading">{year}</h2><TeachingList entries={teaching.filter(entry => entry.data.year === year)} /></section>)}{!teaching.length && <p class="empty-state">Teaching updates will appear here.</p>}</div></SiteLayout>

@@ -1,0 +1,13 @@
+---
+interface Props { prefix?: string; }
+const { prefix = "hero" } = Astro.props;
+---
+<svg viewBox="0 0 360 330" role="img" aria-label="Conceptual illustration of geometry and connections in learned representations">
+      <defs><radialGradient id={`${prefix}-glow`}><stop stop-color="#c48173" stop-opacity=".14"/><stop offset="1" stop-color="#c48173" stop-opacity="0"/></radialGradient><pattern id={`${prefix}-dot`} width="17" height="17" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".7" fill="#697785" opacity=".35"/></pattern></defs>
+      <rect x="13" y="15" width="334" height="290" fill={`url(#${prefix}-dot)`}/><circle cx="180" cy="157" r="153" fill={`url(#${prefix}-glow)`}/>
+      <g fill="none" stroke-width="1.1"><ellipse cx="180" cy="155" rx="128" ry="49" class="accent-stroke" opacity=".6" transform="rotate(-27 180 155)"/><ellipse cx="180" cy="155" rx="128" ry="49" class="rose-stroke" opacity=".8" transform="rotate(33 180 155)"/><ellipse cx="180" cy="155" rx="128" ry="49" class="mint-stroke" opacity=".55" transform="rotate(93 180 155)"/><circle cx="180" cy="155" r="91" stroke="#52616c" opacity=".45"/>
+       <path d="M79 118 148 70 228 101 271 193 189 242 110 210 79 118 228 101 189 242 148 70 110 210 271 193 79 118M148 70 271 193M110 210 228 101" stroke="#c7b299" opacity=".26"/>
+      </g>
+      <g class="accent-fill"><circle cx="79" cy="118" r="4"/><circle cx="148" cy="70" r="4"/><circle cx="228" cy="101" r="4"/><circle cx="271" cy="193" r="4"/><circle cx="189" cy="242" r="4"/><circle cx="110" cy="210" r="4"/><circle cx="180" cy="155" r="6"/></g>
+      <circle cx="180" cy="155" r="14" fill="none" class="accent-stroke" opacity=".3"/>
+     </svg>

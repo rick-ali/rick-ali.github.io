@@ -1,0 +1,22 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import site from '../data/site.json';
+import { entryHref, resourceHref } from '../lib/content';
+interface Props { entry: CollectionEntry<'research'>; }
+const { entry } = Astro.props;
+const { data } = entry;
+---
+<article class:list={['publication', { 'publication-text-only': !data.image }]}>
+ {data.image && <a class="publication-figure" href={resourceHref(data.image)} target="_blank" rel="noopener" aria-label={`View full-size figure for ${data.title}`}>
+  <img src={resourceHref(data.image)} alt={data.imageAlt} loading="lazy" width="640" height="400" />
+  <span class="figure-hint" aria-hidden="true">View figure ↗</span>
+ </a>}
+ <div class="publication-content">
+  <div class="publication-meta"><span class="venue">{data.venue}</span><span>{data.year}</span></div>
+  <h3><a href={entryHref(entry)}>{data.title}</a></h3>
+  <p class="publication-authors">{data.authors.map((author, index) => <>{index > 0 && ', '}{author.replace(/\*+$/, '') === site.name ? <strong>{author}</strong> : author}</>)}</p>
+  {data.authors.some(author => author.endsWith('*')) && <span class="author-note">* Equal contribution</span>}
+  <p class="publication-summary"><span>TL;DR</span> {data.summary}</p>
+  <div class="publication-links">{data.links.map(link => <a href={resourceHref(link.url)}>{link.label} <span aria-hidden="true">↗</span></a>)}<a class="publication-overview" href={entryHref(entry)}>Overview <span aria-hidden="true">→</span></a></div>
+ </div>
+</article>
