@@ -1,11 +1,11 @@
 ---
 title: "Entropy-Lens: Uncovering Decision Strategies in LLMs"
 authors: ["Riccardo Ali*", "Francesco Caso*", "Christopher Irwin*", "Pietro Liò"]
-year: 2025
-venue: "arXiv preprint"
+year: 2026
+venue: "ICLR Scientific Methods for Understanding Deep Learning Workshop"
 topic: "Information & interpretability"
 featured: true
-order: 2
+order: 5
 summary: "Layer-by-layer entropy of token predictions reveals how LLMs expand and prune candidate continuations, with patterns specific to model families and tasks."
 imageAlt: "Entropy-Lens pipeline showing residual-stream projections, entropy computation, profile extraction, aggregation, and classification."
 imageCaption: "Figure 2: the Entropy-Lens pipeline. Cropped from the paper; colours and labels are unchanged. Ali, Caso, Irwin and Liò, CC BY-SA 4.0."
